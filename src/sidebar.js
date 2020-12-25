@@ -88,7 +88,7 @@ const Sidebar = (anectdotes) => {
       </Row>
       <hr/>
       <Row style={{justifyContent:"center"}}>
-      <Link to= "/cv.pdf" target="_blank" download><Button variant="warning">Lataa CV</Button></Link>
+      <Link to= "/2020-12-26_Halmetoja_Heini_CV.pdf" target="_blank" download><Button variant="warning">Lataa CV</Button></Link>
       </Row>
     </Container>
   );
