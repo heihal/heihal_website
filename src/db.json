@@ -1,0 +1,28 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "Tietotekniikka, kandidaatti ja diplomi-insinööri",
+      "date": "2019–",
+      "content": "  Turun Yliopisto, Turku (Suomi) Sivuaine: Biokemia"
+    },
+    {
+      "id": 2,
+      "title": "Avoin yliopisto, Tietojenkäsittelytiede",
+      "date": "2017–2018",
+      "content": " Turun yliopisto TIETOJENKÄSITTELYN PERUSTEET II OLIO-OHJELMOINNIN PERUSTEET ALGORITMIEN JA OHJELMOINNIN PERUSKURSSI TIETOJENKÄSITTELYN PERUSTEET I "
+    },
+    {
+      "id": 3,
+      "title": "Bioanalyytikan ko, Bioanalyytikko/Laboratoriohoitaja",
+      "date": "2012–2015",
+      "content": "Turun ammattikorkeakoulu, Turku (Suomi) patologian erikoisalan opinnot"
+    },
+    {
+      "id": 4,
+      "title": "Lukio, Ylioppilas",
+      "date": "2007-2010",
+      "content": "Turun suomalaisen yhteiskoulun lukio"
+    }
+  ]
+}
