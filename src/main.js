@@ -1,14 +1,8 @@
 
-import Button from 'react-bootstrap/Button'
-import { AiOutlineUser } from 'react-icons/ai';
-import ListGroup from 'react-bootstrap/ListGroup'
-import styles from './index.css';
-import Collapse from 'react-bootstrap/Collapse'
-import React, { useState, useEffect, useRef } from 'react'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import  Card  from 'react-bootstrap/Card';
-import Accordion from 'react-bootstrap/Accordion'
-import Carousel from 'react-bootstrap/Carousel'
+
+import React from 'react'
+import  {Card, Carousel} from 'react-bootstrap';
+
 
 
 const teksti =[
@@ -36,8 +30,7 @@ const teksti =[
 
 
     const Main = () => {
-      const [open, setOpen] = useState(false);
-      const [open2, setOpen2] = useState(false);
+ 
 
     
 

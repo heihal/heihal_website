@@ -11,7 +11,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Skills from './skills';
 import {
   BrowserRouter as Router,
-  Switch, Route, Link
+  Switch, Route
 } from "react-router-dom"
 
 

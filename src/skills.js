@@ -3,18 +3,34 @@ import { IoCode } from 'react-icons/io5';
 import { FaHatWizard } from 'react-icons/fa';
 import ListGroup from 'react-bootstrap/ListGroup'
 import styles from './index.css';
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect} from 'react'
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion'
 import Badge from 'react-bootstrap/Badge'
 import ProgressBar from 'react-bootstrap/ProgressBar'
-
 import axios from 'axios'
 
 
 
 const Skills = () => {
   const [koulutus, setKoulutus] = useState([])
+
+
+
+
+  useEffect(() => {
+    axios
+    .get('db.json')
+    .then(response => {
+      
+     console.log(response.data.notes);
+      setKoulutus(response.data.notes)
+    
+    
+    });
+    }, [])
+
+
 
   const cardStyle = {
     backgroundColor: ' #434343',
@@ -24,13 +40,7 @@ const Skills = () => {
     textAlign: "center"
   }
 
-  useEffect(() => {
-    axios
-      .get('http://localhost:3001/notes')
-      .then(response => {
-        setKoulutus(response.data)
-      })
-  }, [])
+
 
 
   const teksti = [
@@ -123,7 +133,7 @@ const Skills = () => {
       <ListGroup variant="flush" style={{ textAlign: "center" }} >
         <ListGroup.Item style={styles.lista} bsPrefix="lista"  >Taidemaalaus</ListGroup.Item>
         <ListGroup.Item style={styles.lista} bsPrefix="lista" >Autojen korjaus ja ohjelmointi</ListGroup.Item>
-        <ListGroup.Item style={styles.lista} bsPrefix="lista" > Kirjojen luku </ListGroup.Item>
+        <ListGroup.Item style={styles.lista} bsPrefix="lista" > Lukeminen </ListGroup.Item>
         <ListGroup.Item style={styles.lista} bsPrefix="lista" > Elektroniikka (mikrokontrollerit, robotit, IoT, tietokoneet)</ListGroup.Item>
       </ListGroup>
       <hr />

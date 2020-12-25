@@ -33,7 +33,7 @@ const Sidebar = (anectdotes) => {
     <Container>
       <Overlay target={target.current} show={show} placement="right">
         {(props) => (
-          <Tooltip id="overlay-example" {...props}>
+          <Tooltip id="tt" {...props}>
             {selected}
           </Tooltip>
         )}
