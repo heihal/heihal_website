@@ -14,19 +14,12 @@ import axios from 'axios'
 
 const Skills = () => {
   const [koulutus, setKoulutus] = useState([])
-
-
-
-
+  
   useEffect(() => {
     axios
     .get('db.json')
-    .then(response => {
-      
-     console.log(response.data.notes);
-      setKoulutus(response.data.notes)
-    
-    
+    .then(response => { 
+      setKoulutus(response.data.skills)
     });
     }, [])
 
