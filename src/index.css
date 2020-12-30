@@ -14,26 +14,46 @@ code {
 }
 
 
-
-
-
-
 #sidebar-wrapper{
   min-height: 100vh !important;
+  background-color: #434343;
   width: 100vw;
-  background-color: #434343;
   color: azure;
   font: 'Ubuntu';
-  font-size: x-large;
- 
- 
-}
 
-lista{
-  font: 'Ubuntu';
-  color: azure;
-  backgroundColor: "pink";
-  background-color: #434343;
-  width: 100%;
-
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
 }
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 100vh !important;
+  z-index: 100;
+  padding: 48px 0 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+.naama:hover{opacity: 60%!important}
+.linkit{color:azure!important}
+.linkit:hover{opacity: 60%!important}
+.koulutusKortti:hover{opacity: 60%!important}
+.row {
+  display: flex;
+  flex-wrap:wrap;
+
+  
+  }
+
+.rowText {
+  padding: 5%;
+  justify-content: center;
+  text-align: center;
+    
+    }
+
+  
+  
+

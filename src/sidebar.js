@@ -1,8 +1,10 @@
-import React, { useState,useRef } from 'react'
-import { Row, Container, Tooltip ,Image,Nav,Overlay,Button  } from "react-bootstrap";
+import React, { useState, useRef } from 'react'
+import { Row, Container, Tooltip, Image, Nav, Overlay, Button, Navbar } from "react-bootstrap";
 import naama from './naama.jpg'
-import { AiFillGithub, AiFillLinkedin, AiFillGitlab,AiFillMail } from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin, AiFillGitlab, AiFillMail } from 'react-icons/ai';
 import { Link } from "react-router-dom"
+import { Textfit } from 'react-textfit';
+import './index.css';
 
 const anecdotes = [
   'If it hurts, do it more often',
@@ -16,7 +18,7 @@ const anecdotes = [
 
 
 
-const Sidebar = (anectdotes) => {
+const Sidebar = (anectdotes, anec) => {
   const [selected, setSelected] = useState(0)
   const [show, setShow] = useState(false);
   const target = useRef(null);
@@ -24,13 +26,14 @@ const Sidebar = (anectdotes) => {
   const annaA = () => {
     let joku = anecdotes[Math.floor(Math.random() * anecdotes.length)]
     setShow(!show)
-    if(!show){setSelected(joku)}  
+    if (!show) { setSelected(joku) }
   }
+
 
 
   return (
 
-    <Container>
+    <Container fluid ="xs" >
       <Overlay target={target.current} show={show} placement="right">
         {(props) => (
           <Tooltip id="tt" {...props}>
@@ -39,56 +42,70 @@ const Sidebar = (anectdotes) => {
         )}
       </Overlay>
 
-      <Row>
-        <Image src={naama} roundedCircle fluid ref={target} onClick={() => annaA()} />
-       
+      <Row className="rowText" >
+        <Image className="naama" src={naama} roundedCircle fluid ref={target} onClick={() => annaA()} />
       </Row>
-      
-      <Row style={{justifyContent:"center"}} >
-      <div style={{textAlign:"center", opacity:"70%"}}>
-          <h1 >HEINI</h1>
-        <h1 >HALMETOJA</h1>
-          </div>
-          <div style={{textAlign:"center", opacity:"20%"}}>
-          <h3 >Full Stack & Embedded Dev</h3>
-        
-          </div>
-      
-      </Row>
-      <hr/>
-      <Row style={{justifyContent:"center"}}>
 
-        <Nav defaultActiveKey="/main" className="flex-column" >
-     
-          <Nav.Link href="/main" style={{ color: ' azure'}}>Profiili</Nav.Link>
-          <Nav.Link href="/skills" style={{ color: ' azure'}}>Taidot</Nav.Link>
-          <Nav.Link href="/skills" >Yhteystiedot</Nav.Link>
+      <Row className="rowText">
+        
+          <Textfit style={{ opacity: "70%"}} mode="multi">
+           <h4>HEINI HALMETOJA</h4> 
+            </Textfit>
           
-        </Nav>
         
+          <Row className="row">
         
-      </Row>
-      <hr/>
-      <Row style={{justifyContent:"center"}}>
+       
+        <Textfit style={{opacity: "20%" }} mode="multi">Full Stack & Embedded Dev</Textfit>
+      
+    
 
-        <Nav defaultActiveKey="/home" as="ul">
+    </Row>
+
+      </Row>
+      <hr />
+      <Row className="rowText">
+         
+        <Nav fill defaultActiveKey="/main" className="flex-column">
+
+          <Nav.Link href="/main" > <h4 className="linkit" >Profiili</h4> </Nav.Link>
+          <Nav.Link href="/skills"> <h4 className="linkit">Taidot</h4></Nav.Link>
+          <Nav.Link href="/skills" > <h4 className="linkit" xs="auto" > Yhteystiedot</h4> </Nav.Link>
+            
+
+        </Nav>
+       
+
+      </Row>
+      <hr />
+      <Row className="row">
+        <Nav defaultActiveKey="/home" as="ul" style={{justifyContent:"center", width:"100%"}}>
           <Nav.Item as="li">
-            <Nav.Link href="https://github.com/heihal" style={{ color: ' azure' }}><AiFillGithub /></Nav.Link>
+            <Nav.Link href="https://github.com/heihal" >
+            <h3 className="linkit" ><AiFillGithub /></h3>
+              </Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link href="https://gitlab.utu.fi/hemhal" eventKey="link-1"style={{ color: ' azure' }}><AiFillGitlab /></Nav.Link>
+            <Nav.Link href="https://gitlab.utu.fi/hemhal" eventKey="link-1" >
+            <h3 className="linkit" ><AiFillGitlab /></h3></Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link href="https://linkedin.com/in/heini-halmetoja" eventKey="link-2"style={{ color: ' azure' }}><AiFillLinkedin /></Nav.Link>
+            <Nav.Link href="https://linkedin.com/in/heini-halmetoja" eventKey="link-2" >
+              
+              <h3 className="linkit" ><AiFillLinkedin /></h3>
+              </Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link href="mailto:heini.halmetoja@wippies.fi" eventKey="link-2"style={{ color: ' azure' }}><AiFillMail /></Nav.Link>
+            <Nav.Link href="mailto:heini.halmetoja@wippies.fi" eventKey="link-3">
+              
+              <h3 className="linkit" ><AiFillMail /></h3>
+              </Nav.Link>
           </Nav.Item>
         </Nav>
       </Row>
-      <hr/>
-      <Row style={{justifyContent:"center"}}>
-      <Link to= "/2020-12-26_Halmetoja_Heini_CV.pdf" target="_blank" download><Button variant="warning">Lataa CV</Button></Link>
+      <hr />
+      <Row className="rowText">
+        <Link to="/2020-12-26_Halmetoja_Heini_CV.pdf" target="_blank" download><Button variant="warning">Lataa CV</Button></Link>
       </Row>
     </Container>
   );

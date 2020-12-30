@@ -9,17 +9,20 @@ import Accordion from 'react-bootstrap/Accordion'
 import Badge from 'react-bootstrap/Badge'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import axios from 'axios'
+import './index.css';
 
 
 
 const Skills = () => {
   const [koulutus, setKoulutus] = useState([])
+  const [lang, setLang] = useState([])
   
   useEffect(() => {
     axios
     .get('db.json')
     .then(response => { 
       setKoulutus(response.data.skills)
+      setLang(response.data.lang)
     });
     }, [])
 
@@ -34,50 +37,6 @@ const Skills = () => {
   }
 
 
-
-
-  const teksti = [
-    {
-      id: 1,
-      content: "Java"
-    },
-    {
-      id: 2,
-      content: "Kotlin"
-    }
-    ,
-    {
-      id: 3,
-      content: "HTML"
-    }
-    ,
-    {
-      id: 4,
-      content: "CSS"
-    }
-    ,
-    {
-      id: 5,
-      content: "React"
-    }
-    ,
-    {
-      id: 6,
-      content: "C++"
-    }
-    ,
-    {
-      id: 7,
-      content: "Python"
-    }
-    ,
-    {
-      id: 8,
-      content: "React Native"
-    }
-  ]
-
-
   return (
     <div style={{ width:"75%", marginLeft:"13%", backgroundColor:"#434343",marginTop:"2%" }}>
 
@@ -88,7 +47,7 @@ const Skills = () => {
         <div key={x.id}>
           <Accordion variant="dark">
             <Card style={cardStyle}>
-              <Accordion.Toggle as={Card.Header} eventKey="0">
+              <Accordion.Toggle as={Card.Header} eventKey="0" className="koulutusKortti">
                 <Badge pill variant="warning">{x.date}</Badge> {x.title}
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
@@ -111,7 +70,7 @@ const Skills = () => {
       </div>
       <h3 style={{ textAlign: "center", opacity:"70%" }}><IoCode /> Osaamisalueet</h3>
       <div style={{ textAlign: "center" }}>
-        {teksti.map(x => {
+        {lang.map(x => {
 
           return <Badge pill variant="warning" key={x.id} style={{ padding: "15px", marginRight: "15px" }} >
             {x.content}

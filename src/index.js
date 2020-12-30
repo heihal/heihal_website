@@ -13,26 +13,28 @@ import {
   BrowserRouter as Router,
   Switch, Route
 } from "react-router-dom"
+import ReactGA from 'react-ga';
 
 
 
 
 const App = () => {
+  ReactGA.initialize('UA-127314664-1');
+  ReactGA.pageview(window.location.pathname + window.location.search)
 
   return (
     <>
      <Router>
         <Container fluid>
-          <Row>
-            <Col xs={2} id="sidebar-wrapper" >
-              <Sidebar />
+          <Row >
+            <Col xs="auto" lg={2} id="sidebar-wrapper" >
+              <Sidebar  />
             </Col>
-            <Col xs={10} id="main-content-wrapper">
+            <Col xs="auto" lg={10}  id="main-content-wrapper">
               <Switch>
                 <Route exact path="/" component={Main} />
                 <Route path="/main" component={Main} />
                 <Route exact path="/skills" component={Skills} />
-                
               </Switch>
             </Col>
           </Row>

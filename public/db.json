@@ -23,6 +23,45 @@
       "title": "Lukio, Ylioppilas",
       "date": "2007-2010",
       "content": "Turun suomalaisen yhteiskoulun lukio"
-    }
-  ]
+    }],
+    "lang":  [
+      {
+        "id": 1,
+        "content": "Java"
+      },
+      {
+        "id": 2,
+        "content": "Kotlin"
+      }
+      ,
+      {
+        "id": 3,
+        "content": "HTML"
+      }
+      ,
+      {
+        "id": 4,
+        "content": "CSS"
+      }
+      ,
+      {
+        "id": 5,
+        "content": "React"
+      }
+      ,
+      {
+        "id": 6,
+        "content": "C++"
+      }
+      ,
+      {
+        "id": 7,
+        "content": "Python"
+      }
+      ,
+      {
+        "id": 8,
+        "content": "React Native"
+      }
+    ]
 }
